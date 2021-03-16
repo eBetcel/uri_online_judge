@@ -8,3 +8,31 @@ The input contains four floating point numbers that represent the students' grad
 Output
 Print all the answers with one digit after the decimal point."""
 
+grades = input().split()
+n1, n2, n3, n4 = grades
+
+n1 = float(n1)
+n2 = float(n2)
+n3 = float(n3)
+n4 = float(n4)
+
+avg = (n1 * 2 + n2 * 3 + n3 * 4 + n4 * 1) / 10
+
+print("Media: {:.1f}".format(avg))
+
+if(avg < 5):
+    print("Aluno reprovado.")
+    
+elif(avg >= 7):
+    print("Aluno aprovado.")
+
+else:
+    print("Aluno em exame.")
+    exam = float(input())
+    print("Nota do exame: {:.1f}".format(exam))
+    final_avg = (exam + avg) / 2
+    if(final_avg >= 5):
+        print("Aluno aprovado.\nMedia final: {:.1f}".format(final_avg))
+    else:
+        print("Aluno reprovado.\nMedia final: {:.1f}".format(final_avg))
+
